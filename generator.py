@@ -9,7 +9,7 @@ class Generator(object):
 
     def __init__(self):
         self.configuration = None
-        self.templateLoader = jinja2.FileSystemLoader(searchpath="./")
+        self.templateLoader = jinja2.FileSystemLoader(searchpath="templates/")
         self.templateEnv = jinja2.Environment(loader=self.templateLoader, trim_blocks=True, lstrip_blocks=True)
         self.template = self.templateEnv.get_template('example.js')
 
