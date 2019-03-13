@@ -409,6 +409,7 @@ module.exports = class {{ data.exchange.id }} extends Exchange {
         let response = await this.{{ data.fetchOrderBook.request.endpoint }} (this.extend ({
             '{{ data.requests.market_id_field }}': this.marketId (symbol),
             '{{ data.requests.limit_field }}': limit,
+            '{{ data.requests.side_field }}': 'both',
         }, params));
         let orderbook = response['{{ data.responses.result }}'];
         return this.parseOrderBook (orderbook, undefined, '{{ data.responses.data_bids_key }}', '{{ data.responses.data_asks_key }}', 0, 1);
@@ -555,7 +556,7 @@ module.exports = class {{ data.exchange.id }} extends Exchange {
 
     {% if data.fetchBalance %}
     parseBalance (balance) {
-        let currency = this.commonCurrencyCode (balance['{{ data.responses.currency.code_field }}']['{{ data.responses.currency.symbol_field }}']);
+        let currency = this.commonCurrencyCode (balance['{{ data.responses.currency.field_name }}']['{{ data.responses.currency.symbol_field }}']);
         let free = this.safeFloat (balance, '{{ data.responses.balance.free_balance_field }}', 0);
         let used = this.safeFloat (balance, '{{ data.responses.balance.used_balance_field }}', 0);
         let total = free + used;
