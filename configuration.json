@@ -1,0 +1,374 @@
+{
+    "data": {
+        "api": {
+            "deleteEndpoints": [
+                        "apiKeys",
+                        "orders",
+                        "orders/{orderId}",
+                        "withdraws/{withdrawId}"
+            ],
+            "getEndpoints": [
+                        "addresses",
+                        "addresses/{label}",
+                        "airdrops",
+                        "balances",
+                        "balances/{label}",
+                        "chat",
+                        "coins",
+                        "coin/{label}",
+                        "deposits",
+                        "deposits/{depositId}",
+                        "ledger",
+                        "markets",
+                        "markets/{label}",
+                        "markets/{label}/ohlcv",
+                        "markets/{label}/orderbook",
+                        "news",
+                        "orders",
+                        "orders/{orderId}",
+                        "trades",
+                        "trades/{tradeId}",
+                        "trades/all",
+                        "transactions",
+                        "transfers",
+                        "transfers/{transferId}",
+                        "withdraws"
+            ],
+            "headers": {
+                "api_key_field": "X-BOA-KEY",
+                "nonce_field": "X-BOA-NONCE",
+                "signature_field": "X-BOA-ENCRYPTED"
+            },
+            "hmac": {
+                "algorithm": "sha256"
+            },
+            "postEndpoints": [
+                        "addresses/{label}",
+                        "airdrops/{airdropId}",
+                        "apiKeys",
+                        "apiKeys/{key}",
+                        "chat",
+                        "markets/favorites",
+                        "markets/{label}/toggle",
+                        "orders",
+                        "transfers",
+                        "withdraws"
+            ],
+            "rateLimit": 250,
+            "requiredCredentials": {
+                "apiKey": true,
+                "secret": true
+            },
+            "url": "url",
+            "version": "v1"
+        },
+        "cancelOrder": {
+            "request": {
+                "endpoint": "v1DeleteOrdersOrderId"
+            }
+        },
+        "cancelOrders": {
+            "request": {
+                "endpoint": "v1DeleteOrdersOrderId"
+            }
+        },
+        "createDepositAddress": {
+            "request": {
+                "endpoint": "v1PostAddressesLabel"
+            }
+        },
+        "createLimitOrder": true,
+        "createOrder": {
+            "request": {
+                "endpoint": "v1PostOrders"
+            }
+        },
+        "exceptions": {
+                "Invalid X-BOA-ENCRYPTED": "AuthenticationError",
+                "Invalid X-BOA-NONCE": "InvalidNonce",
+                "Address is Pending": "AddressPending",
+                "Insufficient Funds": "InsufficientFunds",
+                "Order Not Found": "OrderNotFound",
+                "Too Many Requests": "DDoSProtection"
+        },
+        "exchange": {
+            "countries": ["CR"],
+            "hostname": "boaexchange.com",
+            "id": "boaexchange",
+            "name": "BOA Exchange",
+            "seperatorSymbol": "_",
+            "timeframes": {
+                "1m": "1",
+                "5m": "5",
+                "15m,": "15",
+                "30m": "30",
+                "1h": "60",
+                "2h": "120",
+                "3h": "180",
+                "4h": "240",
+                "6h": "360",
+                "12h": "720",
+                "1d": "1440",
+                "1w": "10080",
+                "2w": "20160",
+                "1M": "43800"
+            }
+        },
+        "fees": {
+            "fundingPercentageBased": false,
+            "fundingtierBased": false,
+            "percentageBased": false,
+            "trading": {
+                "makerFee": 0.15,
+                "takerFee": 0.15,
+                "tierBased": false
+            }
+        },
+        "fetchBalance": {
+            "request": {
+                "endpoint": "v1GetBalances"
+            }
+        },
+        "fetchClosedOrders": {
+            "request": {
+                "endpoint": "v1GetOrders"
+            }
+        },
+        "fetchCurrencies": {
+            "request": {
+                "endpoint": "v1GetCoins"
+            }
+        },
+        "fetchDepositAddress": {
+            "request": {
+                "endpoint": "v1GetAddressesLabel"
+            }
+        },
+        "fetchDepositAddresses": {
+            "request": {
+                "endpoint": "v1GetAddressesLabel"
+            }
+        },
+        "fetchDeposits": {
+            "request": {
+                "endpoint": "v1GetDeposits"
+            }
+        },
+        "fetchLedger": {
+            "request": {
+                "endpoint": "v1GetLedger"
+            }
+        },
+        "fetchMarkets": {
+            "request": {
+                "endpoint": "v1GetMarkets"
+            }
+        },
+        "fetchMyTrades": {
+            "request": {
+                "endpoint": "v1GetTradess"
+            }
+        },
+        "fetchOHLCV": {
+            "request": {
+                "endpoint": "v1GetMarketsLabelOhlcv"
+            }
+        },
+        "fetchOpenOrders": {
+            "request": {
+                "endpoint": "v1GetOrders"
+            }
+        },
+        "fetchOrder": {
+            "request": {
+                "endpoint": "v1GetOrders"
+            }
+        },
+        "fetchOrderBook": {
+            "request": {
+                "endpoint": "v1GetMarketsLabelOrderbook"
+            }
+        },
+        "fetchOrders": {
+            "request": {
+                "endpoint": "v1GetOrders"
+            }
+        },
+        "fetchTicker": {
+            "request": {
+                "endpoint": "v1GetMarketsLabel"
+            }
+        },
+        "fetchTickers": {
+            "request": {
+                "endpoint": "v1GetMarkets"
+            }
+        },
+        "fetchTrades": {
+            "request": {
+                "endpoint": "v1GetTradesAll"
+            }
+        },
+        "fetchTransactions": {
+            "request": {
+                "endpoint": "v1GetTransactions"
+            }
+        },
+        "fetchWithdrawals": {
+            "request": {
+                "endpoint": "v1GetWithdraws"
+            }
+        },
+        "has": {
+                "CORS": false,
+                "cancelAllOrders": false,
+                "createOrder": true,
+                "createLimitOrder": true,
+                "createMarketOrder": false,
+                "cancelOrder": true,
+                "cancelOrders": true,
+                "createDepositAddress": true,
+                "deposit": false,
+                "fetchBalance": true,
+                "fetchBidsAsks": false,
+                "fetchClosedOrders": true,
+                "fetchCurrencies": true,
+                "fetchDeposits": true,
+                "fetchDepositAddress": true,
+                "fetchDepositAddresses": true,
+                "fetchL2OrderBook": true,
+                "fetchLedger": true,
+                "fetchMarkets": true,
+                "fetchMyTrades": true,
+                "fetchOHLCV": true,
+                "fetchOpenOrders": true,
+                "fetchOrderBook": true,
+                "fetchOrderBooks": false,
+                "fetchOrder": true,
+                "fetchOrders": true,
+                "fetchTicker": true,
+                "fetchTickers": true,
+                "fetchTradingFee": false,
+                "fetchTradingFees": false,
+                "fetchTradingLimits": false,
+                "fetchTransactions": true,
+                "fetchWithdrawals": true,
+                "transferToExchange": true,
+                "transfer": true,
+                "withdraw": true
+        },
+        "requests": {
+            "account_from_field": "from",
+            "account_to_field": "to",
+            "address_field": "address",
+            "amount_field": "amount",
+            "begin_field": "begin",
+            "currency_field": "coin",
+            "currency_id_field": "label",
+            "currency_name_field": "label",
+            "limit_field": "limit",
+            "market_id_field": "label",
+            "order_id_field": "orderId",
+            "page_field": "page",
+            "price_field": "price",
+            "sidce_field": "side",
+            "since_field": "since",
+            "symbol_field": "label",
+            "timeframe_field": "period"
+        },
+        "responses": {
+            "active_field": "active",
+            "address": {
+                "field_name": "address"
+            },
+            "address_field": "address",
+            "amount_field": "amount",
+            "balance": {
+                "free_balance_field": "balance",
+                "used_balance_field": "held_balance"
+            },
+            "base_currency": {
+                "field_name": "coin_market"
+            },
+            "cancelled_field": "cancelled",
+            "closed_field": "closed",
+            "confirmed_field": "confirmed",
+            "confirms_field": "confirms",
+            "cost_field": "cost",
+            "created_field": "created",
+            "currency": {
+                "code_field": "code",
+                "field_name": "coin",
+                "symbol_field": "code"
+            },
+            "data_asks_key": "asks",
+            "data_bids_key": "bids",
+            "fee_field": "fee",
+            "id_field": "id",
+            "ledger_type_field": "ledger_type",
+            "maker_field": "otype",
+            "market": {
+                "paused_field": "paused"
+            },
+            "market_amount_key": "market_amount_key",
+            "market_field": "market_field",
+            "market_id_key": "market_id_key",
+            "name_field": "name_field",
+            "ohlcv": {
+                "close_field": 4,
+                "high_field": 2,
+                "low_field": 3,
+                "open_field": 1,
+                "timestamp_field": 0,
+                "volume_field": 5
+            },
+            "order": {
+                "amount_field": "amount_start",
+                "cancelled_field": "cancelled",
+                "market_id": "market",
+                "remaining_field": "amount",
+                "side_field": "side"
+            },
+            "price_field": "price_field",
+            "quote_currency": {
+                "field_name": "coin_traded"
+            },
+            "result": "result",
+            "symbol_field": "symbol",
+            "ticker": {
+                "base_volume_field": "volume_market",
+                "close_field": "price",
+                "high_field": "high_price",
+                "last_field": "price",
+                "low_field": "low_price",
+                "percentage_change_field": "price_change",
+                "quote_volume_field": "volume_traded"
+            },
+            "timestamp_field": "created",
+            "txid_field": "txid",
+            "withdrawal_id_field": "id",
+            "withdrawals": {
+                "field_name": "withdraws"
+            }
+        },
+        "transfer": {
+            "request": {
+                "endpoint": "v1PostTransfers"
+            }
+        },
+        "url": {
+            "documents": [
+                    "https://api.boaexchange.com/docs/"
+           ],
+            "feeds": [
+            ],
+            "logo": "https://boaexchange.com/4cdef72eb47d4a759d2c72e619f48827.png",
+            "website": "https://boaexchange.com"
+        },
+        "withdraw": {
+            "request": {
+                "endpoint": "v1PostWithdraws"
+            }
+        }
+    }
+}
