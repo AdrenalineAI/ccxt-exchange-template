@@ -59,7 +59,7 @@
                 "apiKey": true,
                 "secret": true
             },
-            "url": "url",
+            "url": "https://api.{hostname}/api",
             "version": "v1"
         },
         "cancelOrder": {
@@ -166,7 +166,7 @@
         },
         "fetchMyTrades": {
             "request": {
-                "endpoint": "v1GetTradess"
+                "endpoint": "v1GetTrades"
             }
         },
         "fetchOHLCV": {
@@ -271,7 +271,7 @@
             "order_id_field": "orderId",
             "page_field": "page",
             "price_field": "price",
-            "sidce_field": "side",
+            "side_field": "side",
             "since_field": "since",
             "symbol_field": "label",
             "timeframe_field": "period"
@@ -333,7 +333,7 @@
             "quote_currency": {
                 "field_name": "coin_traded"
             },
-            "result": "result",
+            "result": "data",
             "symbol_field": "symbol",
             "ticker": {
                 "base_volume_field": "volume_market",
